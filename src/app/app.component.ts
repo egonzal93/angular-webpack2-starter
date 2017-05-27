@@ -5,11 +5,13 @@ import { views } from './app-nav-views';
 import { MOBILE } from './services/constants';
 
 @Component({
-  selector: 'my-app',
-  styleUrls: ['main.scss', './app.component.scss'],
+  selector: 'sdm-app',
+  styleUrls: [
+    './material-theme.scss','./primeng-theme.scss', './app.component.scss'],
   templateUrl: './app.component.html',
   encapsulation: ViewEncapsulation.None
 })
+
 export class AppComponent {
   showMonitor = (ENV === 'development' && !AOT &&
     ['monitor', 'both'].includes(STORE_DEV_TOOLS) // set in constants.js file in project root

@@ -1,0 +1,111 @@
+@import '../../variables';
+//@import '../../primeng-theme';
+@import '../../primeng-omega-theme';
+
+.show-boundary {
+  //border: $contentBorderWidth solid $gray;
+}
+
+
+.activity-container{
+  height: 100%;
+  width: 100%;
+  background: $contentBgColor;
+  border-right: $contentBorderWidth solid $gray;
+  border-bottom: $contentBorderWidth solid $gray;
+}
+
+.dashboard-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.user-header-title{
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.main-search {
+  display: flex;
+  width:100%;
+
+}
+
+.summary-container {
+  height: 100%;
+  width: 100%;
+  margin-left: 0;
+  padding-left: 0;
+  border-bottom: $contentBorderWidth solid $gray;
+  //display: inline-block;
+  //*display:inline;
+  //zoom:1;
+  //vertical-align:top;
+}
+
+.summary-title {
+  //float:left;
+  overflow: hidden;
+  position: relative;
+  font-weight: 500;
+}
+
+.uploaded-files-title {
+  font-weight: 700;
+  border-bottom: $contentBorderWidth solid $gray;
+  background: $headerBgColor
+}
+
+.files-checked-out-container {
+  background: $headerBorderColor;
+  height: 180px;
+}
+
+.files-uploaded-container {
+  background: $headerBorderColor;
+  height: 180px;
+}
+
+.files-checked-out-title{
+  font-weight: 700;
+  border-bottom: $contentBorderWidth solid $gray;
+  background: $headerBgColor
+}
+
+
+.files-checked-out-image-icon {
+  width: 150px;
+  height: 150px;
+  //border: 1px solid #ddd;
+  text-align: center;
+}
+
+.files-checked-out-image-icon span{
+  font-size: large;
+  line-height: 150px;
+}
+
+
+.files-upload-image-icon {
+  width: 150px;
+  height: 150px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.files-upload-image-icon span{
+  font-size: large;
+  line-height: 150px;
+}
+
+.recent-updates-title{
+  font-weight: 700;
+  border-bottom: $contentBorderWidth solid $gray;
+  background: $headerBgColor;
+}
+
+.my-subscriptions-title{
+  font-weight: 700;
+  border-bottom: $contentBorderWidth solid $gray;
+  background: $headerBgColor
+}

@@ -25,7 +25,7 @@ interface WebpackConfig {
   };
   performance?: {
     hints?: boolean;
-  }
+  };
   node?: {
     process?: boolean;
     global?: boolean;

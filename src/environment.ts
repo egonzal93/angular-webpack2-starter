@@ -10,7 +10,6 @@ if ('production' === ENV) {
   // Production
   // disableDebugTools();
   enableProdMode();
-
 } else {
 
   _decorateModuleRef = (modRef: any) => {

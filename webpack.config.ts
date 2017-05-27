@@ -133,7 +133,8 @@ const clientConfig = function webpackConfig(): WebpackConfig {
         loaders: ['to-string-loader', 'css-loader', 'sass-loader']
       },
       ...MY_CLIENT_RULES
-    ]
+    ],
+   
   };
 
   config.plugins = [

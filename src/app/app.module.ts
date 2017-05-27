@@ -9,7 +9,7 @@
 import { ApplicationRef, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
-import { RouterModule, PreloadAllModules } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { IdlePreload, IdlePreloadModule } from '@angularclass/idle-preload';
 
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
@@ -24,7 +24,7 @@ import { APP_PROVIDERS } from './app.providers';
 import { routes } from './app.routing';
 
 import { AppComponent } from './app.component';
-
+import {DataListModule, DataTableModule, SharedModule, ToolbarModule, AutoCompleteModule} from 'primeng/primeng';
 import { AppState } from './reducers';
 
 @NgModule({
@@ -34,6 +34,11 @@ import { AppState } from './reducers';
   ],
   entryComponents: [APP_ENTRY_COMPONENTS],
   imports: [
+    DataListModule,
+    DataTableModule,
+    SharedModule,
+    ToolbarModule,
+    AutoCompleteModule,
     CommonModule,
     HttpModule,
     APP_IMPORTS,
@@ -47,7 +52,7 @@ import { AppState } from './reducers';
 
 export class AppModule {
   constructor(public appRef: ApplicationRef,
-    private _store: Store<AppState>) { }
+              private _store: Store<AppState>) { }
 
   hmrOnInit(store) {
     if (!store || !store.rootState) return;

@@ -2,3 +2,21 @@ $primary-font: "Roboto", "Helvetica", "Arial", sans-serif;
 $break-small: 320px;
 $break-mobile: 800px;
 $break-large: 1200px;
+$gray: #b1b1b1;
+
+/// The regular text weight.
+/// @type Number
+$md-font-regular: 400 !default;
+
+/// The medium text weight.
+/// @type Number
+$md-font-medium: 500 !default;
+
+/// The bold text weight.
+/// @type Number
+$md-font-bold: 700 !default;
+
+
+$search-size: 180px;
+$md-transition-time: .15s !default;
+$md-white-base: #fff;

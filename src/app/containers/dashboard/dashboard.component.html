@@ -1,0 +1,168 @@
+<div class="ui-g overlay">
+
+  <div class="ui-g-12 ui-md-12 ui-g-nopad show-boundary">
+
+      <div class="ui-g-12 ui-g-nopad ">
+        <p-toolbar>
+          <div class="ui-toolbar-group-left ">
+            <div class="dashboard-title">Dashboard</div>
+          </div>
+
+
+          <div class="ui-toolbar-group-right">
+            <a href="#"><i class="">Upload</i></a>
+            <a href="#"><i class="">Alert</i></a>
+            <a href="#"><i class=""><md-icon>settings</md-icon></i></a>
+          </div>
+        </p-toolbar>
+
+      </div>
+
+      <div class="ui-g-12 ui-g-nopad ui-md-3 ">
+        <div class="ui-g-12 activity-container">
+          **Activity Placeholder**
+        </div>
+      </div>
+
+      <div class="ui-g-12 ui-md-9 ui-g-nopad ">
+
+        <div class="ui-g-12  ui-g-nopad show-boundary " style="padding-bottom:15px;padding-top:15px;padding-left:3px;">
+          <div class="user-header-title">Welcome Jason Gonzales</div>
+        </div>
+
+        <div class="ui-g-12  ui-g-nopad show-boundary ">
+          <div class="main-search ">
+            <p-autoComplete
+              placeholder="Search" >
+            </p-autoComplete>
+            <md-icon>search</md-icon>
+          </div>
+
+        </div>
+
+        <div ngClass="ui-g-12 ui-g-nopad show-boundary">
+
+          <div class="ui-g-12 ui-md-12 ui-g-nopad" style="padding-bottom:5px;">
+
+            <div class="ui-g-12 summary-container show-boundary" style="padding-bottom:5px;">
+                <div class="summary-title" style="font-size:16px;font-weight:700;">Summary <span class="summary-title">(As of 11/25/2016, 11:15 AM)</span> </div>
+
+            </div>
+
+            <div ngClass="ui-g-12 ui-md-6 ui-g-nopad " style="padding-right:5px;">
+
+              <div class="uploaded-files-title">Files Uploaded</div>
+
+              <div class="ui-g-12 ui-g-nopad files-uploaded-container" >
+
+                <div class="ui-g-12 ui-md-6 ui-g-nopad">
+
+                  <div class="" >
+                    <div class="files-upload-image-icon">
+                      <span><md-icon>backup</md-icon></span>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="ui-g-12 ui-md-6 ui-g-nopad">
+                  <h2 style="font-weight:800;text-align:right;margin-right:15px">25</h2>
+                  <h6 style="font-weight:600;">Files Uploaded</h6>
+                </div>
+
+              </div>
+
+              <p-toolbar>
+                <div class="ui-toolbar-group-right">
+                  <a href="#"><i class="">View Details</i></a>
+                </div>
+              </p-toolbar>
+
+            </div>
+
+            <div class="ui-g-12 ui-md-6 ui-g-nopad " style="padding-left:2px;">
+
+              <div class="files-checked-out-title">Files Checked out</div>
+
+              <div class="ui-g-12 ui-g-nopad files-checked-out-container" >
+
+                <div class="ui-g-12 ui-md-6 ui-g-nopad">
+
+                  <div class="" >
+                    <div class="files-checked-out-image-icon">
+                      <span><md-icon>lock_open</md-icon></span>
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="ui-g-12 ui-md-6 ui-g-nopad">
+                  <h2 style="font-weight:800;text-align:right;margin-right:15px">80</h2>
+                    <h6 style="font-weight:600;">Files Checked Out</h6>
+                    <div style="text-align:center;"><md-icon>warning</md-icon><span>5</span><span> Files pending</span></div>
+                </div>
+
+              </div>
+
+              <p-toolbar>
+                <div class="ui-toolbar-group-right">
+                  <a href="#"><i class="">View Details</i></a>
+                </div>
+              </p-toolbar>
+            </div>
+
+          </div>
+
+          <div class="ui-g-12 ui-g-nopad show-boundary">
+
+            <div class="ui-g-12 ui-md-8 ui-g-nopad">
+              <div class="recent-updates-title" >Recent Updates</div>
+
+              <div class="ui-grid ui-grid-responsive ui-fluid">
+                  <p-dataTable
+                    [value]="recentUpdates"
+                    [responsive]="true"
+                  >
+                    <p-column field="group" header="Group"></p-column>
+                    <p-column field="description" header="Description"></p-column>
+                    <p-column field="duration" header="Duration"></p-column>
+                  </p-dataTable>
+
+              </div>
+
+              <p-toolbar>
+                <div class="ui-toolbar-group-right">
+                  <a href="#"><i class="">View Details</i></a>
+                </div>
+              </p-toolbar>
+
+            </div>
+
+            <div class="ui-g-12 ui-md-4 ui-g-nopad " style="padding-left:2px;">
+
+              <div class="my-subscriptions-title">My Subscriptions</div>
+
+              <div class="ui-grid ui-grid-responsive ui-fluid">
+
+                <p-dataTable
+                  [value]="subscriptions"
+                  [responsive]="true"
+                >
+                  <p-column field="subscriptions" header="Subscriptions"></p-column>
+                </p-dataTable>
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+  </div>
+
+</div>

@@ -4,36 +4,21 @@ import { storeFreeze } from 'ngrx-store-freeze';
 import { storeLogger } from 'ngrx-store-logger';
 import { routerReducer, RouterState } from '@ngrx/router-store';
 
-import * as fromUser from '../user/user.reducer';
+
+// import * as fromUser from '../user/user.reducer';
 
 const modules = {
-  'user': fromUser
+  // 'user': fromUser
 };
 
 export interface AppState {
   router: RouterState;
-  user: fromUser.UserState;
+  // user: fromUser.UserState;
 }
 
-export const syncReducers = {
+export const reducers = {
   router: routerReducer,
-  user: fromUser.userReducer
-};
-
-const deepCombineReducers = (allReducers: any) => {
-  Object.getOwnPropertyNames(allReducers).forEach((prop) => {
-    if (allReducers.hasOwnProperty(prop)
-      && allReducers[prop] !== null
-      && typeof allReducers[prop] !== 'function') {
-      allReducers[prop] = deepCombineReducers(allReducers[prop]);
-    }
-  });
-  return combineReducers(allReducers);
-};
-
-const createReducer = (asyncReducers = {}) => {
-  let allReducers = { ...syncReducers, ...asyncReducers };
-  return deepCombineReducers(allReducers);
+  // user: fromUser.userReducer
 };
 
 // Generate a reducer to set the root state in dev mode for HMR
@@ -61,24 +46,17 @@ const resetOnLogout = (reducer: Function) => {
 
 const DEV_REDUCERS = [stateSetter, storeFreeze];
 // set in constants.js file of project root
-if (['logger', 'both'].indexOf(STORE_DEV_TOOLS) !== -1) {
-  DEV_REDUCERS.push(storeLogger());
+if (['logger', 'both'].indexOf(STORE_DEV_TOOLS) !== -1 ) {
+    DEV_REDUCERS.push(storeLogger());
 }
 
-// tslint:disable-next-line:max-line-length
-const developmentReducer = compose(...DEV_REDUCERS, resetOnLogout);
-const productionReducer = compose(resetOnLogout);
+const developmentReducer = compose(...DEV_REDUCERS, resetOnLogout, combineReducers)(reducers);
+const productionReducer = compose(resetOnLogout, combineReducers)(reducers);
 
-export function rootReducer(state: any, action: any, asyncReducer) {
+export function rootReducer(state: any, action: any) {
   if (ENV !== 'development') {
-    return productionReducer(createReducer(asyncReducer))(state, action);
+    return productionReducer(state, action);
   } else {
-    return developmentReducer(createReducer(asyncReducer))(state, action);
+    return developmentReducer(state, action);
   }
-}
-
-export function createNewRootReducer(reducer: any): ActionReducer<any> {
-  return function (state, action) {
-    return rootReducer(state, action, reducer);
-  };
 }
